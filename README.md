@@ -39,15 +39,34 @@ pip install PyMuPDF
 
 ### 核心功能演示
 
-#### 基本用法
+#### 图形界面用法 (GUI)
 
-```bash
-# 使用默认参数（处理当前目录下的 PDF 文件，输出到 extracted_images 目录）
-python pdf_image_extraction.py
+您可以像普通软件一样使用：
 
-# 指定输入 PDF 文件和输出目录
-python pdf_image_extraction.py -i input.pdf -o output_images
-```
+- **双击运行**：在 Windows 下，直接双击项目根目录下的 `启动工具.bat` 即可打开界面。
+- **命令行启动**：
+  ```bash
+  python gui.py
+  ```
+
+在界面中，您可以：
+- 点击“浏览”选择 PDF 文件和输出目录
+- 勾选“在外部终端中运行”以调起独立的终端窗口
+- 实时查看提取进度和日志
+- 任务完成后直接点击“打开输出目录”查看结果
+
+#### 打包为独立软件 (.exe)
+
+如果您希望完全脱离 Python 环境或通过一个独立的 `.exe` 文件运行，可以使用 `PyInstaller`：
+
+1. 安装 PyInstaller：`pip install pyinstaller`
+2. 运行打包命令：
+   ```bash
+   pyinstaller --noconsole --onefile --name "PDF图片提取工具" gui.py
+   ```
+3. 打包完成后，在 `dist` 目录下即可找到生成的 `PDF图片提取工具.exe`。
+
+#### 命令行用法
 
 #### 命令行参数
 
